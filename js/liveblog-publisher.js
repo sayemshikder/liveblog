@@ -304,7 +304,7 @@
 			data[liveblog_settings.nonce_key] = liveblog.publisher.nonce;
 			this.disable();
 			this.show_spinner();
-			liveblog.ajax_request( liveblog_settings.endpoint_url + 'crud', data, _.bind(this.success, this), _.bind(this.error, this), 'POST' );
+			liveblog.ajax_request( liveblog_settings.endpoint_url + 'crud', data, _.bind(this.success, liveblog.InsertEntryView), _.bind(this.error, liveblog.InsertEntryView), 'POST' );
 		},
 		success: function(response, status, xhr) {
 			this.enable();
